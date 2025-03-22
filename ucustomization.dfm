@@ -1,0 +1,743 @@
+object frmCust: TfrmCust
+  Left = 673
+  Top = 191
+  Width = 768
+  Height = 618
+  Caption = 'frmCust'
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OldCreateOrder = False
+  PopupMenu = PopupMenu1
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object GroupBox1: TGroupBox
+    Left = 0
+    Top = 0
+    Width = 752
+    Height = 579
+    Align = alClient
+    TabOrder = 0
+    object GroupBox2: TGroupBox
+      Left = 8
+      Top = 8
+      Width = 737
+      Height = 281
+      Caption = 'VN(U)  '
+      Color = clSkyBlue
+      ParentColor = False
+      TabOrder = 0
+      object GroupBox4: TGroupBox
+        Left = 8
+        Top = 16
+        Width = 721
+        Height = 64
+        Caption = 'DATA00_SPEED_[KP_Regul]'
+        Color = clBtnFace
+        ParentColor = False
+        TabOrder = 0
+        object Label1: TLabel
+          Left = 72
+          Top = 32
+          Width = 41
+          Height = 13
+          Caption = 'RANGE:'
+        end
+        object Label9: TLabel
+          Left = 144
+          Top = 16
+          Width = 16
+          Height = 13
+          Caption = 'min'
+        end
+        object Label10: TLabel
+          Left = 208
+          Top = 16
+          Width = 19
+          Height = 13
+          Caption = 'max'
+        end
+        object Label25: TLabel
+          Left = 656
+          Top = 8
+          Width = 35
+          Height = 13
+          Caption = 'VALUE'
+        end
+        object Label33: TLabel
+          Left = 656
+          Top = 32
+          Width = 33
+          Height = 16
+          Caption = '0000'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'MS Sans Serif'
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+        object CheckBox1: TCheckBox
+          Left = 16
+          Top = 32
+          Width = 50
+          Height = 17
+          Caption = 'Exec'
+          TabOrder = 0
+        end
+        object Edit1: TEdit
+          Left = 120
+          Top = 32
+          Width = 64
+          Height = 21
+          TabOrder = 1
+          Text = '0'
+          OnKeyPress = Edit1KeyPress
+        end
+        object Edit2: TEdit
+          Left = 184
+          Top = 32
+          Width = 64
+          Height = 21
+          TabOrder = 2
+          Text = '1000'
+          OnKeyPress = Edit2KeyPress
+        end
+        object TrackBar1: TTrackBar
+          Left = 256
+          Top = 32
+          Width = 384
+          Height = 25
+          Max = 1000
+          TabOrder = 3
+        end
+      end
+      object GroupBox5: TGroupBox
+        Left = 8
+        Top = 80
+        Width = 721
+        Height = 64
+        Caption = 'DATA01_SPEED_[KI_Regul]'
+        Color = clBtnFace
+        ParentColor = False
+        TabOrder = 1
+        object Label2: TLabel
+          Left = 72
+          Top = 32
+          Width = 41
+          Height = 13
+          Caption = 'RANGE:'
+        end
+        object Label11: TLabel
+          Left = 144
+          Top = 16
+          Width = 16
+          Height = 13
+          Caption = 'min'
+        end
+        object Label12: TLabel
+          Left = 208
+          Top = 16
+          Width = 19
+          Height = 13
+          Caption = 'max'
+        end
+        object Label26: TLabel
+          Left = 656
+          Top = 8
+          Width = 35
+          Height = 13
+          Caption = 'VALUE'
+        end
+        object Label34: TLabel
+          Left = 656
+          Top = 32
+          Width = 33
+          Height = 16
+          Caption = '0000'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'MS Sans Serif'
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+        object CheckBox2: TCheckBox
+          Left = 16
+          Top = 32
+          Width = 50
+          Height = 17
+          Caption = 'Exec'
+          TabOrder = 0
+        end
+        object Edit3: TEdit
+          Left = 120
+          Top = 32
+          Width = 64
+          Height = 21
+          TabOrder = 1
+          Text = '0'
+          OnKeyPress = Edit3KeyPress
+        end
+        object Edit4: TEdit
+          Left = 184
+          Top = 32
+          Width = 64
+          Height = 21
+          TabOrder = 2
+          Text = '1000'
+          OnKeyPress = Edit4KeyPress
+        end
+        object TrackBar2: TTrackBar
+          Left = 256
+          Top = 32
+          Width = 384
+          Height = 25
+          Max = 1000
+          TabOrder = 3
+        end
+      end
+      object GroupBox6: TGroupBox
+        Left = 8
+        Top = 144
+        Width = 721
+        Height = 64
+        Caption = 'DATA02_ANGLE_[KP_Regul]'
+        Color = clBtnFace
+        ParentColor = False
+        TabOrder = 2
+        object Label3: TLabel
+          Left = 72
+          Top = 32
+          Width = 41
+          Height = 13
+          Caption = 'RANGE:'
+        end
+        object Label13: TLabel
+          Left = 144
+          Top = 16
+          Width = 16
+          Height = 13
+          Caption = 'min'
+        end
+        object Label14: TLabel
+          Left = 208
+          Top = 16
+          Width = 19
+          Height = 13
+          Caption = 'max'
+        end
+        object Label27: TLabel
+          Left = 656
+          Top = 8
+          Width = 35
+          Height = 13
+          Caption = 'VALUE'
+        end
+        object Label35: TLabel
+          Left = 656
+          Top = 32
+          Width = 33
+          Height = 16
+          Caption = '0000'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'MS Sans Serif'
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+        object CheckBox3: TCheckBox
+          Left = 16
+          Top = 32
+          Width = 50
+          Height = 17
+          Caption = 'Exec'
+          TabOrder = 0
+        end
+        object Edit5: TEdit
+          Left = 120
+          Top = 32
+          Width = 64
+          Height = 21
+          TabOrder = 1
+          Text = '0'
+          OnKeyPress = Edit5KeyPress
+        end
+        object Edit6: TEdit
+          Left = 184
+          Top = 32
+          Width = 64
+          Height = 21
+          TabOrder = 2
+          Text = '1000'
+          OnKeyPress = Edit6KeyPress
+        end
+        object TrackBar3: TTrackBar
+          Left = 256
+          Top = 32
+          Width = 384
+          Height = 25
+          Max = 1000
+          TabOrder = 3
+        end
+      end
+      object GroupBox7: TGroupBox
+        Left = 8
+        Top = 208
+        Width = 721
+        Height = 64
+        Caption = 'DATA03_SPEED[Mistake_Azim_U]'
+        Color = clBtnFace
+        ParentColor = False
+        TabOrder = 3
+        object Label4: TLabel
+          Left = 72
+          Top = 32
+          Width = 41
+          Height = 13
+          Caption = 'RANGE:'
+        end
+        object Label15: TLabel
+          Left = 144
+          Top = 16
+          Width = 16
+          Height = 13
+          Caption = 'min'
+        end
+        object Label16: TLabel
+          Left = 208
+          Top = 16
+          Width = 19
+          Height = 13
+          Caption = 'max'
+        end
+        object Label28: TLabel
+          Left = 656
+          Top = 8
+          Width = 35
+          Height = 13
+          Caption = 'VALUE'
+        end
+        object Label36: TLabel
+          Left = 656
+          Top = 32
+          Width = 33
+          Height = 16
+          Caption = '0000'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'MS Sans Serif'
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+        object CheckBox4: TCheckBox
+          Left = 16
+          Top = 32
+          Width = 50
+          Height = 17
+          Caption = 'Exec'
+          Checked = True
+          State = cbChecked
+          TabOrder = 0
+        end
+        object Edit7: TEdit
+          Left = 120
+          Top = 32
+          Width = 64
+          Height = 21
+          TabOrder = 1
+          Text = '0'
+          OnKeyPress = Edit7KeyPress
+        end
+        object Edit8: TEdit
+          Left = 184
+          Top = 32
+          Width = 64
+          Height = 21
+          TabOrder = 2
+          Text = '1000'
+          OnKeyPress = Edit8KeyPress
+        end
+        object TrackBar4: TTrackBar
+          Left = 256
+          Top = 32
+          Width = 384
+          Height = 25
+          Max = 1000
+          TabOrder = 3
+        end
+      end
+    end
+    object GroupBox3: TGroupBox
+      Left = 8
+      Top = 288
+      Width = 737
+      Height = 281
+      Caption = 'GN(D)'
+      Color = clMoneyGreen
+      ParentColor = False
+      TabOrder = 1
+      object GroupBox8: TGroupBox
+        Left = 8
+        Top = 16
+        Width = 721
+        Height = 64
+        Caption = 'DATA10_SPEED_ [KP_Regul]'
+        Color = clBtnFace
+        ParentColor = False
+        TabOrder = 0
+        object Label5: TLabel
+          Left = 72
+          Top = 32
+          Width = 41
+          Height = 13
+          Caption = 'RANGE:'
+        end
+        object Label17: TLabel
+          Left = 144
+          Top = 16
+          Width = 16
+          Height = 13
+          Caption = 'min'
+        end
+        object Label18: TLabel
+          Left = 208
+          Top = 16
+          Width = 19
+          Height = 13
+          Caption = 'max'
+        end
+        object Label29: TLabel
+          Left = 656
+          Top = 8
+          Width = 35
+          Height = 13
+          Caption = 'VALUE'
+        end
+        object Label37: TLabel
+          Left = 656
+          Top = 32
+          Width = 33
+          Height = 16
+          Caption = '0000'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'MS Sans Serif'
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+        object CheckBox5: TCheckBox
+          Left = 16
+          Top = 32
+          Width = 50
+          Height = 17
+          Caption = 'Exec'
+          TabOrder = 0
+        end
+        object Edit9: TEdit
+          Left = 120
+          Top = 32
+          Width = 64
+          Height = 21
+          TabOrder = 1
+          Text = '0'
+          OnKeyPress = Edit9KeyPress
+        end
+        object Edit10: TEdit
+          Left = 184
+          Top = 32
+          Width = 64
+          Height = 21
+          TabOrder = 2
+          Text = '1000'
+          OnKeyPress = Edit10KeyPress
+        end
+        object TrackBar5: TTrackBar
+          Left = 256
+          Top = 32
+          Width = 384
+          Height = 25
+          Max = 1000
+          Position = 300
+          TabOrder = 3
+        end
+      end
+      object GroupBox9: TGroupBox
+        Left = 8
+        Top = 80
+        Width = 721
+        Height = 64
+        Caption = 'DATA11_SPEED_[KI_Regul]'
+        Color = clBtnFace
+        ParentColor = False
+        TabOrder = 1
+        object Label6: TLabel
+          Left = 72
+          Top = 32
+          Width = 41
+          Height = 13
+          Caption = 'RANGE:'
+        end
+        object Label19: TLabel
+          Left = 144
+          Top = 16
+          Width = 16
+          Height = 13
+          Caption = 'min'
+        end
+        object Label20: TLabel
+          Left = 200
+          Top = 16
+          Width = 19
+          Height = 13
+          Caption = 'max'
+        end
+        object Label30: TLabel
+          Left = 656
+          Top = 8
+          Width = 35
+          Height = 13
+          Caption = 'VALUE'
+        end
+        object Label38: TLabel
+          Left = 656
+          Top = 32
+          Width = 33
+          Height = 16
+          Caption = '0000'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'MS Sans Serif'
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+        object CheckBox6: TCheckBox
+          Left = 16
+          Top = 32
+          Width = 50
+          Height = 17
+          Caption = 'Exec'
+          TabOrder = 0
+        end
+        object Edit11: TEdit
+          Left = 120
+          Top = 32
+          Width = 64
+          Height = 21
+          TabOrder = 1
+          Text = '0'
+          OnKeyPress = Edit11KeyPress
+        end
+        object Edit12: TEdit
+          Left = 184
+          Top = 32
+          Width = 64
+          Height = 21
+          TabOrder = 2
+          Text = '1000'
+          OnKeyPress = Edit12KeyPress
+        end
+        object TrackBar6: TTrackBar
+          Left = 256
+          Top = 32
+          Width = 384
+          Height = 25
+          Max = 1000
+          Position = 200
+          TabOrder = 3
+        end
+      end
+      object GroupBox10: TGroupBox
+        Left = 8
+        Top = 144
+        Width = 721
+        Height = 64
+        Caption = 'DATA12_ANGLE_ [KP_Regul]'
+        Color = clBtnFace
+        ParentColor = False
+        TabOrder = 2
+        object Label7: TLabel
+          Left = 72
+          Top = 32
+          Width = 41
+          Height = 13
+          Caption = 'RANGE:'
+        end
+        object Label21: TLabel
+          Left = 144
+          Top = 16
+          Width = 16
+          Height = 13
+          Caption = 'min'
+        end
+        object Label22: TLabel
+          Left = 192
+          Top = 16
+          Width = 19
+          Height = 13
+          Caption = 'max'
+        end
+        object Label31: TLabel
+          Left = 656
+          Top = 8
+          Width = 35
+          Height = 13
+          Caption = 'VALUE'
+        end
+        object Label39: TLabel
+          Left = 656
+          Top = 32
+          Width = 33
+          Height = 16
+          Caption = '0000'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'MS Sans Serif'
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+        object CheckBox7: TCheckBox
+          Left = 16
+          Top = 32
+          Width = 50
+          Height = 17
+          Caption = 'Exec'
+          TabOrder = 0
+        end
+        object Edit13: TEdit
+          Left = 120
+          Top = 32
+          Width = 64
+          Height = 21
+          TabOrder = 1
+          Text = '0'
+          OnKeyPress = Edit13KeyPress
+        end
+        object Edit14: TEdit
+          Left = 184
+          Top = 32
+          Width = 64
+          Height = 21
+          TabOrder = 2
+          Text = '1000'
+          OnKeyPress = Edit14KeyPress
+        end
+        object TrackBar7: TTrackBar
+          Left = 256
+          Top = 32
+          Width = 384
+          Height = 25
+          Max = 1000
+          Position = 70
+          TabOrder = 3
+        end
+      end
+      object GroupBox11: TGroupBox
+        Left = 8
+        Top = 208
+        Width = 721
+        Height = 64
+        Caption = 'DATA13_ANGLE_ [KI_Regul]'
+        Color = clBtnFace
+        ParentColor = False
+        TabOrder = 3
+        object Label8: TLabel
+          Left = 72
+          Top = 32
+          Width = 41
+          Height = 13
+          Caption = 'RANGE:'
+        end
+        object Label23: TLabel
+          Left = 144
+          Top = 16
+          Width = 16
+          Height = 13
+          Caption = 'min'
+        end
+        object Label24: TLabel
+          Left = 192
+          Top = 16
+          Width = 19
+          Height = 13
+          Caption = 'max'
+        end
+        object Label32: TLabel
+          Left = 656
+          Top = 8
+          Width = 35
+          Height = 13
+          Caption = 'VALUE'
+        end
+        object Label40: TLabel
+          Left = 656
+          Top = 32
+          Width = 33
+          Height = 16
+          Caption = '0000'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'MS Sans Serif'
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+        object CheckBox8: TCheckBox
+          Left = 16
+          Top = 32
+          Width = 50
+          Height = 17
+          Caption = 'Exec'
+          TabOrder = 0
+        end
+        object Edit15: TEdit
+          Left = 120
+          Top = 32
+          Width = 64
+          Height = 21
+          TabOrder = 1
+          Text = '0'
+          OnKeyPress = Edit15KeyPress
+        end
+        object Edit16: TEdit
+          Left = 184
+          Top = 32
+          Width = 64
+          Height = 21
+          TabOrder = 2
+          Text = '1000'
+          OnKeyPress = Edit16KeyPress
+        end
+        object TrackBar8: TTrackBar
+          Left = 256
+          Top = 32
+          Width = 384
+          Height = 25
+          Max = 1000
+          TabOrder = 3
+        end
+      end
+    end
+  end
+  object PopupMenu1: TPopupMenu
+    Left = 592
+    Top = 32
+    object LOAD1: TMenuItem
+      Caption = 'LOAD'
+      OnClick = LOAD1Click
+    end
+    object SAVE1: TMenuItem
+      Caption = 'SAVE'
+      OnClick = SAVE1Click
+    end
+  end
+end
