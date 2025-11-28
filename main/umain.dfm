@@ -1,8 +1,8 @@
 object frmMain: TfrmMain
-  Left = 429
-  Top = 336
+  Left = 214
+  Top = 131
   Width = 413
-  Height = 409
+  Height = 440
   Caption = 'Naira OPU '#8470'1'
   Color = clGray
   Font.Charset = DEFAULT_CHARSET
@@ -145,7 +145,7 @@ object frmMain: TfrmMain
     Left = 0
     Top = 0
     Width = 397
-    Height = 370
+    Height = 401
     Align = alClient
     Color = clBtnFace
     ParentColor = False
@@ -257,11 +257,11 @@ object frmMain: TfrmMain
       Left = 8
       Top = 229
       Width = 384
-      Height = 132
+      Height = 164
       TabOrder = 3
       object SpeedButton1: TSpeedButton
         Left = 8
-        Top = 104
+        Top = 136
         Width = 369
         Height = 22
         Caption = 'EXIT'
@@ -270,8 +270,8 @@ object frmMain: TfrmMain
       object GroupBox6: TGroupBox
         Left = 8
         Top = 8
-        Width = 369
-        Height = 89
+        Width = 90
+        Height = 121
         Caption = 'TECH'
         TabOrder = 0
         object CheckBox4: TCheckBox
@@ -290,8 +290,6 @@ object frmMain: TfrmMain
           Width = 65
           Height = 17
           Caption = 'VN'
-          Checked = True
-          State = cbChecked
           TabOrder = 1
         end
         object CheckBox6: TCheckBox
@@ -301,6 +299,88 @@ object frmMain: TfrmMain
           Height = 17
           Caption = 'GN'
           TabOrder = 2
+        end
+      end
+      object GroupBox7: TGroupBox
+        Left = 192
+        Top = 8
+        Width = 185
+        Height = 121
+        Caption = 'UPN'
+        TabOrder = 1
+        object RadioButton1: TRadioButton
+          Left = 8
+          Top = 16
+          Width = 169
+          Height = 17
+          Caption = 'PlatformIII_Ballom"BLUE"'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clSilver
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          Font.Style = [fsBold]
+          ParentFont = False
+          TabOrder = 0
+        end
+        object RadioButton2: TRadioButton
+          Left = 8
+          Top = 40
+          Width = 169
+          Height = 17
+          Caption = 'PlatformIV_Ohlajd"GRN"'
+          Checked = True
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clSilver
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          Font.Style = [fsBold]
+          ParentFont = False
+          TabOrder = 1
+          TabStop = True
+        end
+        object RadioButton3: TRadioButton
+          Left = 8
+          Top = 88
+          Width = 113
+          Height = 17
+          Caption = 'buffer'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clGray
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          Font.Style = []
+          ParentFont = False
+          TabOrder = 2
+        end
+        object RadioButton4: TRadioButton
+          Left = 8
+          Top = 64
+          Width = 161
+          Height = 17
+          Caption = 'PlatformIV_1_Ohlajd"BLCK"'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clGray
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          Font.Style = []
+          ParentFont = False
+          TabOrder = 3
+        end
+      end
+      object GroupBox8: TGroupBox
+        Left = 96
+        Top = 8
+        Width = 90
+        Height = 121
+        Caption = 'RMD'
+        TabOrder = 2
+        object CheckBox7: TCheckBox
+          Left = 8
+          Top = 16
+          Width = 97
+          Height = 17
+          Caption = 'Execute'
+          TabOrder = 0
         end
       end
     end

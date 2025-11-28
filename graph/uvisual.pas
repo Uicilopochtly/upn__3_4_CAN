@@ -110,6 +110,11 @@ type
     RadioButton8: TRadioButton;
     RadioButton9: TRadioButton;
     RadioButton10: TRadioButton;
+    TrackBar3: TTrackBar;
+    GroupBox5: TGroupBox;
+    RadioButton11: TRadioButton;
+    RadioButton12: TRadioButton;
+    RadioButton13: TRadioButton;
     procedure StartStop1Click(Sender: TObject);
     procedure Close1Click(Sender: TObject);
     procedure Clear1Click(Sender: TObject);
@@ -167,18 +172,26 @@ var
 begin
 
     //задание области значений
-    if frmVis.RadioButton5.Checked then
+    if frmVis.RadioButton5.Checked then begin
       frmVis.TrackBar1.Max:= 1
-    else if frmVis.RadioButton6.Checked then
+    end
+    else if frmVis.RadioButton6.Checked then begin
       frmVis.TrackBar1.Max:= 100
-    else if frmVis.RadioButton7.Checked then
+    end
+    else if frmVis.RadioButton7.Checked then begin
       frmVis.TrackBar1.Max:= 100
-    else if frmVis.RadioButton8.Checked then
+    end
+    else if frmVis.RadioButton8.Checked then begin
       frmVis.TrackBar1.Max:= 1000
-    else if frmVis.RadioButton9.Checked then
+    end
+    else if frmVis.RadioButton9.Checked then begin
       frmVis.TrackBar1.Max:= 10000
-    else if frmVis.RadioButton10.Checked then
-      frmVis.TrackBar1.Max:= 100000;
+    end
+    else if frmVis.RadioButton10.Checked then begin
+      frmVis.TrackBar1.Max:= 100000
+    end;
+
+    frmVis.TrackBar3.Max := frmVis.TrackBar1.Max - 1;
 
 
     if frmVis.Visible = true then begin

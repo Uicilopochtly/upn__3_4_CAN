@@ -5,6 +5,13 @@ interface
 uses umain , Windows;
 
 const
+   _UPN1_3_                   = 3;
+   _UPN1_4_                   = 4;
+   _UPN1_41_                  = 41;
+   _UPN1_BUF_                 = 9;
+
+
+
    //===========================================================================
    //---------------------------------------------------------------------------
    CAN_ID_PTU_SENSOR_VN      =  $00003045;
@@ -49,6 +56,11 @@ type t_data = packed record
     thin_can100   : byte; 
 
   end;
+
+   _PLATFORM_    : byte;
+   _PLATFORM_old : byte;
+
+
 
 
 end;
@@ -113,6 +125,18 @@ type t_can = packed record
         buff   : array [0..7] of byte;
       end;
 
+      pack03   : record  //CUST CONTROL_VN_1 RMD
+        id     : cardinal;
+        buff   : array [0..7] of byte;
+      end;
+
+      pack04   : record  //CUST CONTROL_GN_1 RMD
+        id     : cardinal;
+        buff   : array [0..7] of byte;
+      end;
+
+
+
     end;
 
   end;
@@ -126,8 +150,11 @@ type t_visual = packed record
    sign_data_y : boolean;
 
    rx_data    :  record
-     cnt      : integer;
-     cnt100   : integer;
+     cnt_vn      : integer;
+     cnt100_vn   : integer;
+
+     cnt_gn      : integer;
+     cnt100_gn   : integer;
 
 
    end;
@@ -348,6 +375,17 @@ type t_ptu = packed record
           b12 : byte;
           b13 : byte;
 
+          b20 : byte; //RMD
+          b21 : byte;
+          b22 : byte;
+          b23 : byte;
+          b30 : byte;
+          b31 : byte;
+          b32 : byte;
+          b33 : byte;
+
+
+
         end;
 
       end;
@@ -357,6 +395,12 @@ type t_ptu = packed record
         data01 : short;
         data02 : short;
         data03 : short;
+
+        data20 : short;  //RMD
+        data21 : short;
+        data22 : short;
+        data23 : short;
+
       end;
 
       gn : record
@@ -364,6 +408,12 @@ type t_ptu = packed record
         data11 : short;
         data12 : short;
         data13 : short;
+
+        data30 : short;  //RMD
+        data31 : short;
+        data32 : short;
+        data33 : short;
+
       end;
 
 

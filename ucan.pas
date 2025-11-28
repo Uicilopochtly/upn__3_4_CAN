@@ -147,8 +147,18 @@ begin
                                   or(p.tx.custom.cntr.mask.b12 shl 6)
                                   or(p.tx.custom.cntr.mask.b13 shl 7);
 
+       //------------------------- RMD ------------------------------------------
+      c.tx.cust.pack00.buff[2] :=   (p.tx.custom.cntr.mask.b20 shl 0)
+                                  or(p.tx.custom.cntr.mask.b21 shl 1)
+                                  or(p.tx.custom.cntr.mask.b22 shl 2)
+                                  or(p.tx.custom.cntr.mask.b23 shl 3)
+                                  or(p.tx.custom.cntr.mask.b30 shl 4)
+                                  or(p.tx.custom.cntr.mask.b31 shl 5)
+                                  or(p.tx.custom.cntr.mask.b32 shl 6)
+                                  or(p.tx.custom.cntr.mask.b33 shl 7);
 
-      c.tx.cust.pack00.buff[2] := 0;
+
+
       c.tx.cust.pack00.buff[3] := 0;
       c.tx.cust.pack00.buff[4] := 0;
       c.tx.cust.pack00.buff[5] := 0;
@@ -189,9 +199,43 @@ begin
      //------------------------------------------------------------------------
      CAN_Write(  c.tx.cust.pack02.id , @c.tx.cust.pack02.buff, 8);
     end;
+    //=============================== rmd ========================================
+  3:begin
+     c.tx.cust.pack03.buff[0] :=  ((p.tx.custom.vn.data20  and $00FF) shr 0);
+     c.tx.cust.pack03.buff[1] :=  ((p.tx.custom.vn.data20  and $FF00) shr 8);
+
+     c.tx.cust.pack03.buff[2] :=  ((p.tx.custom.vn.data21  and $00FF) shr 0);
+     c.tx.cust.pack03.buff[3] :=  ((p.tx.custom.vn.data21  and $FF00) shr 8);
+
+     c.tx.cust.pack03.buff[4] :=  ((p.tx.custom.vn.data22  and $00FF) shr 0);
+     c.tx.cust.pack03.buff[5] :=  ((p.tx.custom.vn.data22  and $FF00) shr 8);
+
+     c.tx.cust.pack03.buff[6] :=  ((p.tx.custom.vn.data23  and $00FF) shr 0);
+     c.tx.cust.pack03.buff[7] :=  ((p.tx.custom.vn.data23  and $FF00) shr 8);
+
+     //------------------------------------------------------------------------
+     CAN_Write(  c.tx.cust.pack03.id , @c.tx.cust.pack03.buff, 8);
+    end;
+  4:begin
+     c.tx.cust.pack04.buff[0] :=  ((p.tx.custom.gn.data30  and $00FF) shr 0);
+     c.tx.cust.pack04.buff[1] :=  ((p.tx.custom.gn.data30  and $FF00) shr 8);
+
+     c.tx.cust.pack04.buff[2] :=  ((p.tx.custom.gn.data31  and $00FF) shr 0);
+     c.tx.cust.pack04.buff[3] :=  ((p.tx.custom.gn.data31  and $FF00) shr 8);
+
+     c.tx.cust.pack04.buff[4] :=  ((p.tx.custom.gn.data32  and $00FF) shr 0);
+     c.tx.cust.pack04.buff[5] :=  ((p.tx.custom.gn.data32  and $FF00) shr 8);
+
+     c.tx.cust.pack04.buff[6] :=  ((p.tx.custom.gn.data33  and $00FF) shr 0);
+     c.tx.cust.pack04.buff[7] :=  ((p.tx.custom.gn.data33  and $FF00) shr 8);
+
+     //------------------------------------------------------------------------
+     CAN_Write(  c.tx.cust.pack04.id , @c.tx.cust.pack04.buff, 8);
+    end;
+
   end;
   //----------------------------------------------------------------------------
-  if (d.time.thin_can100 < 2) then inc(d.time.thin_can100) else  d.time.thin_can100 := 0;
+  if (d.time.thin_can100 < 4) then inc(d.time.thin_can100) else  d.time.thin_can100 := 0;
 
 end;
 

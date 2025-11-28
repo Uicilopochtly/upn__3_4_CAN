@@ -29,6 +29,13 @@ type
     ProgressBar2: TProgressBar;
     Label3: TLabel;
     Label4: TLabel;
+    GroupBox7: TGroupBox;
+    RadioButton1: TRadioButton;
+    RadioButton2: TRadioButton;
+    RadioButton3: TRadioButton;
+    RadioButton4: TRadioButton;
+    GroupBox8: TGroupBox;
+    CheckBox7: TCheckBox;
     procedure tmrMainThreadTimer(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure SpeedButton1Click(Sender: TObject);
@@ -46,7 +53,14 @@ implementation
 
 {$R *.dfm}
 
-uses udata , uinit , udisplay , utimers , ucan , uvisual , uexecute , ucontrlol_by_angle , usensor , ucustomization , usave;
+uses udata , uinit , udisplay , utimers , ucan , uvisual , uexecute , ucontrlol_by_angle , usensor , ucustomization , usave,
+     urmd ,
+     urmd_customization ,
+     urmd_display       ,
+     urmd_data ,
+     urmd_init ;
+
+
 
 
 //==============================================================================
@@ -56,8 +70,12 @@ begin
   ptimers();
   //----------------------------------------------------------------------------
   pdisplay();
+  //---------------------------------------------------------------------------- RMD
+  prmd_display();
   //----------------------------------------------------------------------------
   pcustomization();
+  //---------------------------------------------------------------------------- RMD
+  prmd_customization();
   //----------------------------------------------------------------------------
   can_reciave();
   //----------------------------------------------------------------------------
@@ -94,6 +112,9 @@ begin
   v.constructor_graph.time.second_event:= true;
 
   if (s.customization_opu.loaded = false) then s.customization_opu.loaded :=true;
+
+  //rmd
+  if (s_rmd.customization_opu.loaded = false) then s_rmd.customization_opu.loaded :=true;
 end;
 
 end.

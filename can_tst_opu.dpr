@@ -14,7 +14,13 @@ uses
   usensor in 'usensor.pas' {frmSens},
   ucustomization in 'ucustomization.pas' {frmCust},
   utimers in 'utimers.pas',
-  usave in 'usave.pas';
+  usave in 'usave.pas',
+  urmd in 'rmd\urmd.pas' {frmRmd},
+  urmd_customization in 'rmd\urmd_customization.pas',
+  urmd_data in 'rmd\urmd_data.pas',
+  urmd_display in 'rmd\urmd_display.pas',
+  urmd_init in 'rmd\urmd_init.pas',
+  urmd_save in 'rmd\urmd_save.pas';
 
 {$R *.res}
 
@@ -25,5 +31,6 @@ begin
   Application.CreateForm(TfrmControlByAngle, frmControlByAngle);
   Application.CreateForm(TfrmSens, frmSens);
   Application.CreateForm(TfrmCust, frmCust);
+  Application.CreateForm(TfrmRmd, frmRmd);
   Application.Run;
 end.

@@ -9,6 +9,8 @@ procedure psave_customization();
 procedure pload_customization();
 
 implementation
+uses udisplay;
+
 //==============================================================================
 procedure psave_customization();
 begin
@@ -22,7 +24,22 @@ begin
   s.customization_opu.WriteData[7] := StrToInt(frmCust.Label40.Caption);
 
   //----------------------------------------------------------------------------
-  AssignFile(s.customization_opu.myFile, '.\save\customization_opu.txt');
+  case d._PLATFORM_ of
+  _UPN1_3_:
+      AssignFile(s.customization_opu.myFile, '.\save\customization_opu_3.txt');
+  _UPN1_4_:
+      AssignFile(s.customization_opu.myFile, '.\save\customization_opu_4.txt');
+   _UPN1_41_:
+      AssignFile(s.customization_opu.myFile, '.\save\customization_opu_41.txt');
+
+  _UPN1_BUF_:
+      AssignFile(s.customization_opu.myFile, '.\save\customization_opu_B.txt');
+  end;
+  //----------------------------------------------------------------------------
+
+
+
+
   ReWrite(s.customization_opu.myFile,  SizeOf(s.customization_opu.WriteData));
   BlockWrite(s.customization_opu.myFile, s.customization_opu.WriteData,  SizeOf(s.customization_opu.WriteData));
   CloseFile(s.customization_opu.myFile);
@@ -37,7 +54,23 @@ var
 begin
 
   FileMode := fmOpenRead;
-  AssignFile(s.customization_opu.myFile, '.\save\customization_opu.txt');
+
+ //----------------------------------------------------------------------------
+  case d._PLATFORM_ of
+  _UPN1_3_:
+      AssignFile(s.customization_opu.myFile, '.\save\customization_opu_3.txt');
+  _UPN1_4_:
+      AssignFile(s.customization_opu.myFile, '.\save\customization_opu_4.txt');
+  _UPN1_41_:
+      AssignFile(s.customization_opu.myFile, '.\save\customization_opu_41.txt');
+  _UPN1_BUF_:
+      AssignFile(s.customization_opu.myFile, '.\save\customization_opu_B.txt');
+
+  end;
+  //----------------------------------------------------------------------------
+
+
+
   Reset(s.customization_opu.myFile, 1);
   count:=  SizeOf(s.customization_opu.ReadData);
   BlockRead(s.customization_opu.myFile, s.customization_opu.ReadData,  SizeOf(s.customization_opu.WriteData), count);

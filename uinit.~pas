@@ -12,6 +12,8 @@ procedure pinit();
 var
   i :  integer;
 begin
+
+  d._PLATFORM_ := _UPN1_3_;
   //----------------------------------------------------------------------------
   d.system.open_maraphone                         := true;
   d.system.open_ptu                               := false;
@@ -68,8 +70,12 @@ begin
 
   //----------------------------------------------------------------------------
   v.constructor_graph.sign_data_y                 := false;
-  v.constructor_graph.rx_data.cnt                 := 0;
-  v.constructor_graph.rx_data.cnt100              := 0;
+  v.constructor_graph.rx_data.cnt_vn                 := 0;
+  v.constructor_graph.rx_data.cnt100_vn              := 0;
+
+  v.constructor_graph.rx_data.cnt_gn                 := 0;
+  v.constructor_graph.rx_data.cnt100_gn              := 0;
+
   v.constructor_graph.fq.data                     := 0;
   v.constructor_graph.fq.reset                    := false;
   v.constructor_graph.fq.counter                  := 0;

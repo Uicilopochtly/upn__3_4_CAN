@@ -342,8 +342,6 @@ object frmCust: TfrmCust
           Width = 50
           Height = 17
           Caption = 'Exec'
-          Checked = True
-          State = cbChecked
           TabOrder = 0
         end
         object Edit7: TEdit

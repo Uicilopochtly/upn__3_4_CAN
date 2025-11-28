@@ -1,6 +1,6 @@
 object frmVis: TfrmVis
-  Left = 338
-  Top = 181
+  Left = 686
+  Top = 428
   Width = 1529
   Height = 619
   AlphaBlendValue = 0
@@ -497,7 +497,6 @@ object frmVis: TfrmVis
           Width = 81
           Height = 17
           Caption = 'SIGNED'
-          Checked = True
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clYellow
           Font.Height = -11
@@ -505,7 +504,6 @@ object frmVis: TfrmVis
           Font.Style = []
           ParentFont = False
           TabOrder = 0
-          TabStop = True
         end
         object RadioButton4: TRadioButton
           Left = 120
@@ -513,6 +511,7 @@ object frmVis: TfrmVis
           Width = 81
           Height = 17
           Caption = 'UNSIGNED'
+          Checked = True
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clYellow
           Font.Height = -11
@@ -520,6 +519,7 @@ object frmVis: TfrmVis
           Font.Style = []
           ParentFont = False
           TabOrder = 1
+          TabStop = True
         end
       end
       object GroupBox4: TGroupBox
@@ -584,6 +584,54 @@ object frmVis: TfrmVis
           Height = 17
           Caption = '1000000'
           TabOrder = 5
+        end
+      end
+      object TrackBar3: TTrackBar
+        Left = 1416
+        Top = 264
+        Width = 24
+        Height = 64
+        Orientation = trVertical
+        TabOrder = 10
+      end
+      object GroupBox5: TGroupBox
+        Left = 1408
+        Top = 88
+        Width = 73
+        Height = 105
+        Caption = 'level'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWhite
+        Font.Height = -11
+        Font.Name = 'MS Sans Serif'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 11
+        object RadioButton11: TRadioButton
+          Left = 16
+          Top = 24
+          Width = 48
+          Height = 17
+          Caption = 'x1'
+          Checked = True
+          TabOrder = 0
+          TabStop = True
+        end
+        object RadioButton12: TRadioButton
+          Left = 16
+          Top = 48
+          Width = 48
+          Height = 17
+          Caption = 'x10'
+          TabOrder = 1
+        end
+        object RadioButton13: TRadioButton
+          Left = 16
+          Top = 72
+          Width = 48
+          Height = 17
+          Caption = 'x100'
+          TabOrder = 2
         end
       end
       object Series1: TFastLineSeries

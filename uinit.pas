@@ -12,6 +12,8 @@ procedure pinit();
 var
   i :  integer;
 begin
+
+  d._PLATFORM_ := _UPN1_3_;
   //----------------------------------------------------------------------------
   d.system.open_maraphone                         := true;
   d.system.open_ptu                               := false;
@@ -57,6 +59,17 @@ begin
   c.tx.cust.pack02.id                                  := CAN_ID2_CUST_PTU_GN;
   for i:= 0 to 7 do begin
     c.tx.cust.pack02.buff[i] := 0;
+  end;
+
+  //---------------------------------------- vn rmd
+  c.tx.cust.pack03.id                                  := CAN_ID3_CUST_PTU_VN;
+  for i:= 0 to 7 do begin
+    c.tx.cust.pack03.buff[i] := 0;
+  end;
+  //---------------------------------------- gn rmd
+  c.tx.cust.pack04.id                                  := CAN_ID4_CUST_PTU_GN;
+  for i:= 0 to 7 do begin
+    c.tx.cust.pack04.buff[i] := 0;
   end;
 
 

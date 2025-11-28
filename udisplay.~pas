@@ -2,7 +2,10 @@ unit udisplay;
 
 interface
 
-uses umain , udata , Graphics , uvisual , ucontrlol_by_angle , usensor , ucustomization;
+uses umain , udata , Graphics , uvisual , ucontrlol_by_angle , usensor , ucustomization , usave ,
+     urmd , urmd_customization , urmd_data , urmd_save;
+
+
 
 procedure pdisplay;
 
@@ -12,6 +15,25 @@ implementation
 
 procedure pdisplay;
 begin
+  //--------------- тип платформы ----------------------------------------------
+  frmMain.RadioButton1.Color := clBtnFace;
+  frmMain.RadioButton2.Color := clBtnFace;
+  frmMain.RadioButton4.Color := clBtnFace;
+
+  if frmMain.RadioButton1.Checked then begin
+    d._PLATFORM_ := _UPN1_3_ ;
+    frmMain.RadioButton1.Color := clBlue;
+  end
+  else if frmMain.RadioButton2.Checked then begin
+    d._PLATFORM_ := _UPN1_4_;
+    frmMain.RadioButton2.Color := clGreen;
+  end else if frmMain.RadioButton3.Checked then begin
+    d._PLATFORM_ := _UPN1_BUF_
+  end else if frmMain.RadioButton4.Checked then begin
+    frmMain.RadioButton4.Color := clBlack;
+    d._PLATFORM_ := _UPN1_41_;
+  end;
+
   //--------------- maraphone state --------------------------------------------
   if (d.system.open_maraphone = false) then begin
     frmMain.Label1.Font.Color := clMaroon;
@@ -45,6 +67,10 @@ begin
     frmVis.TrackBar2.Top  := frmVis.Chart1.Height - 12;
     frmVis.TrackBar2.Width:= frmVis.Chart1.Width -  frmVis.TrackBar1.Width;
 
+    frmVis.TrackBar3.Top   := frmVis.TrackBar1.Top + trunc(frmVis.TrackBar1.Height/4);
+    frmVis.TrackBar3.Height:= trunc(frmVis.TrackBar1.Height/2);
+    frmVis.TrackBar3.Left  := frmVis.TrackBar1.Left - 32;
+
     frmVis.GroupBox3.Top  :=  frmVis.TrackBar2.Top - frmVis.TrackBar2.Height * 2;
     frmVis.GroupBox3.Left :=  frmVis.TrackBar2.Left + trunc(frmVis.TrackBar2.Width/2) - trunc(frmVis.GroupBox3.Width/2);
 
@@ -64,9 +90,16 @@ begin
     //--------------------------
     if v.constructor_graph.sign_data_y = true then
       frmVis.Chart1.LeftAxis.SetMinMax(-10 * frmVis.TrackBar1.Position,10* frmVis.TrackBar1.Position)
-    else
-      frmVis.Chart1.LeftAxis.SetMinMax(0,10* frmVis.TrackBar1.Position);
+    else begin
 
+      if frmVis.RadioButton11.Checked then
+        frmVis.Chart1.LeftAxis.SetMinMax(1 * frmVis.TrackBar3.Position,10* frmVis.TrackBar1.Position)
+      else if frmVis.RadioButton12.Checked then
+        frmVis.Chart1.LeftAxis.SetMinMax(10 * frmVis.TrackBar3.Position,10* frmVis.TrackBar1.Position)
+      else if frmVis.RadioButton13.Checked then
+        frmVis.Chart1.LeftAxis.SetMinMax(100 * frmVis.TrackBar3.Position,10* frmVis.TrackBar1.Position)
+
+    end;
     //============================= repers =======================================
     if frmVis.CheckBox1.Checked then
       v.constructor_graph.repers.execute := true
@@ -107,6 +140,8 @@ begin
       v.constructor_graph.sign_data_y := false;
 
     frmVis.GroupBox4.Left := frmVis.Chart1.Width - frmVis.GroupBox4.Width - 40;
+    frmVis.GroupBox5.Left := frmVis.Chart1.Width - frmVis.GroupBox4.Width + 10;
+    frmVis.GroupBox5.Top  := frmVis.GroupBox4.Top + frmVis.GroupBox4.Height + 8;
 
   end;
 
@@ -246,7 +281,32 @@ begin
   if (p.tx.custom.cntr.execute = 1) then frmCust.Visible:= true else frmCust.Visible:= false;
 
 
+
+  if (d._PLATFORM_old <>  d._PLATFORM_) then begin
+    s.customization_opu.loaded :=false;
+
+    s_rmd.customization_opu.loaded :=false; //rmd
+
+
+
+    pload_customization();
+
+    prmd_load_customization();              //rmd
+
+
+
+  end;
+
+   d._PLATFORM_old :=  d._PLATFORM_;
+
+
   pcustomization_display();
+
+  //============================================================================ RMD
+  if  frmMain.CheckBox7.Checked then frmRmd.Visible:= true else frmRmd.Visible:= false;
+
+   prmd_customization_display();
+
 
 
 

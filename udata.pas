@@ -5,6 +5,13 @@ interface
 uses umain , Windows;
 
 const
+   _UPN1_3_                   = 3;
+   _UPN1_4_                   = 4;
+   _UPN1_41_                  = 41;
+   _UPN1_BUF_                 = 9;
+
+
+
    //===========================================================================
    //---------------------------------------------------------------------------
    CAN_ID_PTU_SENSOR_VN      =  $00003045;
@@ -16,6 +23,8 @@ const
    CAN_ID0_CUST_PTU_CONTROL  =  $00009100;
    CAN_ID1_CUST_PTU_VN       =  $00009101;
    CAN_ID2_CUST_PTU_GN       =  $00009102;
+   CAN_ID3_CUST_PTU_VN       =  $00009103;
+   CAN_ID4_CUST_PTU_GN       =  $00009104;
 
    //===========================================================================
 
@@ -49,6 +58,11 @@ type t_data = packed record
     thin_can100   : byte; 
 
   end;
+
+   _PLATFORM_    : byte;
+   _PLATFORM_old : byte;
+
+
 
 
 end;
@@ -112,6 +126,18 @@ type t_can = packed record
         id     : cardinal;
         buff   : array [0..7] of byte;
       end;
+
+      pack03   : record  //CUST CONTROL_VN_1 RMD
+        id     : cardinal;
+        buff   : array [0..7] of byte;
+      end;
+
+      pack04   : record  //CUST CONTROL_GN_1 RMD
+        id     : cardinal;
+        buff   : array [0..7] of byte;
+      end;
+
+
 
     end;
 
@@ -351,6 +377,17 @@ type t_ptu = packed record
           b12 : byte;
           b13 : byte;
 
+          b20 : byte; //RMD
+          b21 : byte;
+          b22 : byte;
+          b23 : byte;
+          b30 : byte;
+          b31 : byte;
+          b32 : byte;
+          b33 : byte;
+
+
+
         end;
 
       end;
@@ -360,6 +397,12 @@ type t_ptu = packed record
         data01 : short;
         data02 : short;
         data03 : short;
+
+        data20 : short;  //RMD
+        data21 : short;
+        data22 : short;
+        data23 : short;
+
       end;
 
       gn : record
@@ -367,6 +410,12 @@ type t_ptu = packed record
         data11 : short;
         data12 : short;
         data13 : short;
+
+        data30 : short;  //RMD
+        data31 : short;
+        data32 : short;
+        data33 : short;
+
       end;
 
 
