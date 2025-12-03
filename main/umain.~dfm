@@ -1,6 +1,6 @@
 object frmMain: TfrmMain
-  Left = -1036
-  Top = 235
+  Left = 331
+  Top = 335
   Width = 413
   Height = 440
   Caption = 'Naira OPU '#8470'1'

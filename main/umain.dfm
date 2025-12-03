@@ -1,6 +1,6 @@
 object frmMain: TfrmMain
-  Left = -738
-  Top = 461
+  Left = 291
+  Top = 159
   Width = 413
   Height = 440
   Caption = 'Naira OPU '#8470'1'
@@ -328,7 +328,6 @@ object frmMain: TfrmMain
           Width = 169
           Height = 17
           Caption = 'PlatformIV_Ohlajd"GRN"'
-          Checked = True
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clSilver
           Font.Height = -11
@@ -336,7 +335,6 @@ object frmMain: TfrmMain
           Font.Style = [fsBold]
           ParentFont = False
           TabOrder = 1
-          TabStop = True
         end
         object RadioButton3: TRadioButton
           Left = 8
@@ -358,6 +356,7 @@ object frmMain: TfrmMain
           Width = 161
           Height = 17
           Caption = 'PlatformIV_1_Ohlajd"BLCK"'
+          Checked = True
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clGray
           Font.Height = -11
@@ -365,6 +364,7 @@ object frmMain: TfrmMain
           Font.Style = []
           ParentFont = False
           TabOrder = 3
+          TabStop = True
         end
       end
       object GroupBox8: TGroupBox
