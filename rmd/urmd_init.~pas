@@ -1,0 +1,17 @@
+unit urmd_init;
+
+interface
+
+uses umain;
+
+procedure prmd_init();
+
+implementation
+
+procedure prmd_init();
+begin
+
+
+end;
+
+end.

@@ -1,0 +1,91 @@
+unit urmd_save;
+
+interface
+
+uses umain , udata  , urmd , urmd_data  , SysUtils , urmd_customization ;
+
+
+procedure prmd_save_customization();
+procedure prmd_load_customization();
+
+implementation
+uses udisplay;
+
+//==============================================================================
+procedure prmd_save_customization();
+begin
+  s_rmd.customization_opu.WriteData[0] := StrToInt(frmRmd.Label17.Caption);
+  s_rmd.customization_opu.WriteData[1] := StrToInt(frmRmd.Label18.Caption);
+  s_rmd.customization_opu.WriteData[2] := StrToInt(frmRmd.Label19.Caption);
+  s_rmd.customization_opu.WriteData[3] := StrToInt(frmRmd.Label20.Caption);
+  s_rmd.customization_opu.WriteData[4] := StrToInt(frmRmd.Label21.Caption);
+  s_rmd.customization_opu.WriteData[5] := StrToInt(frmRmd.Label22.Caption);
+  s_rmd.customization_opu.WriteData[6] := StrToInt(frmRmd.Label23.Caption);
+  s_rmd.customization_opu.WriteData[7] := StrToInt(frmRmd.Label24.Caption);
+
+  //----------------------------------------------------------------------------
+  case d._PLATFORM_ of
+  _UPN1_3_:
+      AssignFile(s.customization_opu.myFile, '.\rmd\save\customization_opu_3_rmd.txt');
+  _UPN1_4_:
+      AssignFile(s.customization_opu.myFile, '.\rmd\save\customization_opu_4_rmd.txt');
+   _UPN1_41_:
+      AssignFile(s.customization_opu.myFile, '.\rmd\save\customization_opu_41_rmd.txt');
+
+  _UPN1_BUF_:
+      AssignFile(s.customization_opu.myFile, '.\rmd\save\customization_opu_B_rmd.txt');
+  end;
+  //----------------------------------------------------------------------------
+
+
+
+  ReWrite(s_rmd.customization_opu.myFile,  SizeOf(s_rmd.customization_opu.WriteData));
+  BlockWrite(s_rmd.customization_opu.myFile, s_rmd.customization_opu.WriteData,  SizeOf(s_rmd.customization_opu.WriteData));
+  CloseFile(s_rmd.customization_opu.myFile);
+
+
+end;
+
+//==============================================================================
+procedure prmd_load_customization();
+var
+  count     : integer;
+begin
+
+  FileMode := fmOpenRead;
+
+ //----------------------------------------------------------------------------
+  case d._PLATFORM_ of
+  _UPN1_3_:
+      AssignFile(s.customization_opu.myFile, '.\rmd\save\customization_opu_3_rmd.txt');
+  _UPN1_4_:
+      AssignFile(s.customization_opu.myFile, '.\rmd\save\customization_opu_4_rmd.txt');
+  _UPN1_41_:
+      AssignFile(s.customization_opu.myFile, '.\rmd\save\customization_opu_41_rmd.txt');
+  _UPN1_BUF_:
+      AssignFile(s.customization_opu.myFile, '.\rmd\save\customization_opu_B_rmd.txt');
+
+  end;
+  //----------------------------------------------------------------------------
+
+
+
+
+  Reset(s_rmd.customization_opu.myFile, 1);
+  count:=  SizeOf(s_rmd.customization_opu.ReadData);
+  BlockRead(s_rmd.customization_opu.myFile, s_rmd.customization_opu.ReadData,  SizeOf(s_rmd.customization_opu.WriteData), count);
+  //----------------------------------------------------------------------------
+  frmRmd.Label17.Caption := IntToStr( s_rmd.customization_opu.ReadData[0]);
+  frmRmd.Label18.Caption := IntToStr( s_rmd.customization_opu.ReadData[1]);
+  frmRmd.Label19.Caption := IntToStr( s_rmd.customization_opu.ReadData[2]);
+  frmRmd.Label20.Caption := IntToStr( s_rmd.customization_opu.ReadData[3]);
+  frmRmd.Label21.Caption := IntToStr( s_rmd.customization_opu.ReadData[4]);
+  frmRmd.Label22.Caption := IntToStr( s_rmd.customization_opu.ReadData[5]);
+  frmRmd.Label23.Caption := IntToStr( s_rmd.customization_opu.ReadData[6]);
+  frmRmd.Label24.Caption := IntToStr( s_rmd.customization_opu.ReadData[7]);
+
+
+  
+
+end;
+end.
